@@ -6,7 +6,8 @@ var randomRelatedIndex, showRelatedPost;
         numPosts: 7,
         summaryLength: 370,
         titleLength: "auto",
-        thumbnailSize: 200,
+        thumbnailWidth: 200,
+        thumbnailHeight: 113,
         noImage: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxIDEiIHhtbG5zOnY9Imh0dHBzOi8vdmVjdGEuaW8vbmFubyI+PHBhdGggZD0iTTAgMGgxdjFIMHoiIGZpbGw9IiNmNmY4ZmMiLz48L3N2Zz4=",
         containerId: "related-post",
         newTabLink: false,
@@ -55,13 +56,13 @@ var randomRelatedIndex, showRelatedPost;
             }
             t = x[q].title.$t;
             w = (d.titleLength !== "auto" && d.titleLength < t.length) ? t.substring(0, d.titleLength) + "&hellip;" : t;
-            r = ("media$thumbnail"in x[q] && d.thumbnailSize !== false) ? x[q].media$thumbnail.url.replace(/\/s\d+(\-c)?/, "/w" + d.thumbnailSize + "-h140-p-rw") : d.noImage;
+            r = ("media$thumbnail"in x[q] && d.thumbnailWidth !== false) ? x[q].media$thumbnail.url.replace(/\/s\d+(\-c)?/, "/w" + d.thumbnailWidth + "-h" + d.thumbnailHeight + "-p-rw") : d.noImage;
             u = ("summary"in x[q] && d.summaryLength > 0) ? x[q].summary.$t.replace(/<br ?\/?>/g, " ").replace(/<.*?>/g, "").replace(/[<>]/g, "").substring(0, d.summaryLength) + "&hellip;" : "";
             for (var p = 0, a = x[q].link.length; p < a; p++) {
                 v = (x[q].link[p].rel == "alternate") ? x[q].link[p].href : "#"
             }
             if (A == 3) {
-                c += '<li class="related-post-item" tabindex="0"><a class="related-post-item-titleimg" href="' + v + '"' + b + ' title="' + t + '"><img alt="' + t + '" class="related-post-item-thumbnail" src="' + r + '" width="' + d.thumbnailSize + '" height="' + d.thumbnailSize + '" title="' + t + '"></a><h3 class="related-post-item-tooltip"><a class="related-post-item-title" title="' + t + '" href="' + v + '"' + b + ">" + w + "</a></h3>" + y + "</li>"
+                c += '<li class="related-post-item" tabindex="0"><a class="related-post-item-titleimg" href="' + v + '"' + b + ' title="' + t + '"><img alt="' + t + '" class="related-post-item-thumbnail" src="' + r + '" width="' + d.thumbnailWidth + '" height="' + d.thumbnailHeight + '" title="' + t + '"></a><h3 class="related-post-item-tooltip"><a class="related-post-item-title" title="' + t + '" href="' + v + '"' + b + ">" + w + "</a></h3>" + y + "</li>"
             } else {
                 c += '<li><a title="' + t + '" href="' + v + '"' + b + ">" + w + "</a></li>"
             }
