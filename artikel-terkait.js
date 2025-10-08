@@ -56,8 +56,8 @@ var randomRelatedIndex, showRelatedPost;
             }
             t = x[q].title.$t;
             w = (d.titleLength !== "auto" && d.titleLength < t.length) ? t.substring(0, d.titleLength) + "&hellip;" : t;
-            r = ("media$thumbnail"in x[q] && d.thumbnailWidth !== false) ? x[q].media$thumbnail.url.replace(/\/[sw]\d+[^\/]*/, "w" + d.thumbnailWidth + "-h" + d.thumbnailHeight + "-p-rw") : d.noImage;
-			rbk = ("media$thumbnail"in x[q] && d.thumbnailWidth !== false) ? x[q].media$thumbnail.url.replace(/\/[sw]\d+[^\/]*/, "w48-h48-p-rw") : d.noImage;
+            r = ("media$thumbnail"in x[q] && d.thumbnailWidth !== false) ? x[q].media$thumbnail.url.replace(/\/[sw]\d+[^\/]*/, "/w" + d.thumbnailWidth + "-h" + d.thumbnailHeight + "-p-rw") : d.noImage;
+			rbk = ("media$thumbnail"in x[q] && d.thumbnailWidth !== false) ? x[q].media$thumbnail.url.replace(/\/[sw]\d+[^\/]*/, "/w48-h48-p-rw") : d.noImage;
             u = ("summary"in x[q] && d.summaryLength > 0) ? x[q].summary.$t.replace(/<br ?\/?>/g, " ").replace(/<.*?>/g, "").replace(/[<>]/g, "").substring(0, d.summaryLength) + "&hellip;" : "";
             for (var p = 0, a = x[q].link.length; p < a; p++) {
                 v = (x[q].link[p].rel == "alternate") ? x[q].link[p].href : "#"
