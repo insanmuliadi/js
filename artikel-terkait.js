@@ -76,10 +76,7 @@ var randomRelatedIndex, showRelatedPost;
             element.style.display = "block"
           })
         };
-        newBookmarkButtons.forEach((button) => {
-          button.addEventListener('click', toggleItem);
-          updateBookmarkButtonState();
-        });
+        updateBookmarkButtonState();
 
   // Tampilkan data bookmark yang disimpan dalam localStorage
   //lihatStored();
