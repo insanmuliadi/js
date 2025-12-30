@@ -63,7 +63,7 @@ var randomRelatedIndex, showRelatedPost;
                 v = (x[q].link[p].rel == "alternate") ? x[q].link[p].href : "#"
             }
             if (A == 2) {
-                c += '<li class="related-post-item" tabindex="0"><a class="related-post-item-titleimg" href="' + v + '"' + b + ' title="' + t + '"><img alt="' + t + '" class="related-post-item-thumbnail lazyload" src="'+d.noImage+'" data-src="' + r + '" width="' + d.thumbnailWidth + '" height="' + d.thumbnailHeight + '" title="' + t + '"></a><button class="bookmark-button" data-img="' + rbk + '" data-title="' + t + '" data-url="' + v + '">Loading...</button><h3 class="related-post-item-tooltip"><a class="related-post-item-title" title="' + t + '" href="' + v + '"' + b + ">" + w + "</a></h3>" + y + "</li>"
+                c += '<li class="related-post-item" tabindex="0"><a class="related-post-item-titleimg" href="' + v + '"' + b + ' title="' + t + '"><img alt="' + t + '" class="related-post-item-thumbnail lazyload" src="'+d.noImage+'" data-src="' + r + '" width="' + d.thumbnailWidth + '" height="' + d.thumbnailHeight + '" title="' + t + '"></a><button class="bookmark-button" data-img="' + rbk + '" data-title="' + t + '" data-url="' + v + '"></button><h3 class="related-post-item-tooltip"><a class="related-post-item-title" title="' + t + '" href="' + v + '"' + b + ">" + w + "</a></h3>" + y + "</li>"
             } else {
                 c += '<li><a title="' + t + '" href="' + v + '"' + b + ">" + w + "</a></li>"
             }
